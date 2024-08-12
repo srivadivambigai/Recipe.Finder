@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Sign-Up Page -->
+    <div id="signup-container" class="container">
+        <div class="signup-box">
+            <div class="first">
+                <img src="https://img.freepik.com/premium-vector/boy-girl-are-working-as-chef-cooking-together_81761-310.jpg?w=740" alt="Chef Photo" class="chef-photo">
+                <label for="name">NAME:</label>
+                <input type="text" id="signup-name" placeholder="Name">
+                <label for="email">EMAIL:</label>
+                <input type="email" id="signup-email" placeholder="Email">
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="signup-password" placeholder="Password">
+                <button onclick="signUp()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipe Finder Page -->
+    <div id="search-container" class="container hidden">
+        <header class="header">
+            <!-- <button class="live-button"><span class="dot"></span>Live</button> -->
+            <input type="text" id="search" placeholder="Search for a recipe...">
+            <button class="search-button" onclick="searchRecipes()">
+                <img src="https://img.icons8.com/ios-filled/50/000000/search.png" alt="Search">
+            </button>
+            <button class="add-recipe-button" onclick="toggleSubmitRecipe()">Add Yours😇</button>
+        </header>
+
+        <div id="submit-recipe-container" class="hidden">
+            <h2 id="s1">Submit Your Recipe 😋(submit your recipe only once)</h2>
+            <label>RECIPE NAME :</label>
+            <input type="text" id="recipe-name" placeholder="Recipe Name">
+            <label>CUISINE TYPE OF YOUR FABULOUS DISH :</label>
+            <input type="text" id="recipe-cuisine" placeholder="Cuisine Type">
+            <label>IMAGE OF YOUR WONDERFUL DISH:</label>
+            <input type="text" id="recipe-image" placeholder="Image URL">
+            <label>SOUL INGREDIENTS :</label>
+            <textarea id="recipe-ingredients" placeholder="Ingredients (comma-separated)"></textarea>
+            <label>MAGICAL RECIPE STEPS:</label>
+            <textarea id="recipe-steps" placeholder="Steps (each step on a new line)"></textarea>
+            <label> VIDEO URL:</label>
+            <input type="text" id="recipe-video" placeholder="YouTube Video URL (optional)">
+            <label> AMAZON URL:</label>
+            <input type="text" id="recipe-int" placeholder="Amazon link for your ingredients">
+            <button ID="S2" onclick="submitRecipe()">Submit Recipe</button>
+        </div>
+
+        <div id="recipes" class="recipe-list"></div>
+    </div>
+
+    <!-- Recipe Detail Page -->
+    <div id="recipe-detail-container" class="container hidden recipe-detail">
+        <button onclick="showSearchPage()">Back to Search</button>
+        <div id="recipe-detail"></div>
+        <div id="review-container">
+            <h2>Feedback</h2>
+            <textarea id="review-text" placeholder="Write a review..."></textarea>
+            <button onclick="submitReview()">Submit Review</button>
+            <div id="reviews"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
